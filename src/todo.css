@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+  background: linear-gradient(120deg, #3a94ed 30%, #42c4ef 70%);
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #22223b;
+  text-align: center;
+}
+
+.todo-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #3a0ca3;
+  letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.todo-input-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.todo-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px #6366f133;
+  background: #fff;
+}
+
+.todo-input {
+  border-radius: 1.3rem !important;
+  border: 1.5px solid #b6bbc6;
+  background: #f8fafc;
+  font-size: 1.1rem;
+  padding: 0.7em 1em;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  flex: 1;
+}
+
+/* Buttons */
+.todo-btn {
+  border-radius: 12px !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
+  color: #fff;
+  border: none;
+  margin-left: 0.5rem;
+  padding: 0.55em 1.3em;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+.todo-btn.update {
+  background: linear-gradient(90deg, #ffbe0b 0%, #fb5607 100%);
+  color: #fff;
+}
+.todo-btn.cancel {
+  background: #e0e1dd;
+  color: #495057;
+}
+.todo-btn:hover, .todo-btn:focus {
+  background: linear-gradient(90deg, #4361ee 0%, #3a0ca3 100%);
+  transform: scale(1.06);
+}
+
+/* Todo List */
+.todo-list {
+  margin-top: 1rem;
+}
+
+/* List Items: Minimal, soft, with hover hint */
+.todo-list-item {
+  border-radius: 1.2rem !important;
+  margin-bottom: 0.8rem;
+  font-size: 1.13rem;
+  background: #f4f3ff;
+  color: #22223b;
+  font-family: inherit;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 1px 6px #3a0ca312;
+  user-select: none;
+  padding: 0.9em 1.2em;
+  border: 1px solid #e0e7ef;
+}
+.todo-list-item:hover {
+  background: #e0e7ef;
+  box-shadow: 0 4px 20px #3a0ca322;
+  transform: translateY(-2px) scale(1.018);
+}
+.todo-list-item:active {
+  background: #b6bbc6;
+  transform: scale(0.97);
+}
+/* Hover hint: click to update, double-click to delete */
+.todo-list-item::after {
+  content: "Click to update, double-click to delete";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8em;
+  color: #3a0ca3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.todo-list-item:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .todo-container {
+    padding: 1.2rem 0.4rem;
+    max-width: 98vw;
+  }
+  .todo-title {
+    font-size: 1.5rem;
+  }
+  .todo-list-item {
+    font-size: 1rem;
+    padding: 0.7em 0.9em;
+  }
+}
+
